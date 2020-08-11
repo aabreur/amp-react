@@ -24,9 +24,9 @@ test:
         - pwd
     test:
       commands:
+        - mkdir coverage
         - npx prettier --check src
-        - pwd
-        - ls -lha
+        - CI=true npm run test -- --coverage --watchAll=false
   artifacts:
     baseDirectory: coverage
     files:
