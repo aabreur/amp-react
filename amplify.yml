@@ -23,6 +23,6 @@ test:
       commands:
         - npx prettier --check src
   artifacts:
-    baseDirectory: coverage
+    baseDirectory: /coverage
     files:
       - '**/*.*'
