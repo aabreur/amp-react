@@ -26,6 +26,7 @@ test:
       commands:
         - npx prettier --check src
         - pwd
+        - ls -lha
   artifacts:
     baseDirectory: coverage
     files:
