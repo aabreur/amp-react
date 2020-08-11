@@ -20,12 +20,14 @@ test:
   phases:
     preTest:
       commands:
-        - npm ci
         - mkdir coverage
+        - npm ci
     test:
       commands:
-        - ls -lha
         - npx prettier --check src
+        - CI=true npm run test -- --coverage --watchAll=false
+        - ls -lha
+        - ls -lha coverage
   artifacts:
     baseDirectory: coverage
     files:
