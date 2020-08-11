@@ -25,7 +25,7 @@ test:
     test:
       commands:
         - npx prettier --check src
-        - CI=true npm run test -- --coverage --watchAll=false --debug
+        - CI=true npm test -- --coverage --watchAll=false
     postTest:
       commands:
         - ls -lha
