@@ -3,11 +3,9 @@ frontend:
   phases:
     preBuild:
       commands:
-        - pwd
         - npm install
     build:
       commands:
-        - pwd
         - npm run build
   artifacts:
     baseDirectory: build
@@ -20,17 +18,13 @@ test:
   phases:
     preTest:
       commands:
-        - mkdir coverage
         - npm ci
     test:
       commands:
         - CI=true npm test -- --coverage --watchAll=false
         - npx prettier --check src
-    postTest:
-      commands:
-        - ls -lha
-        - ls -lha coverage
   artifacts:
     baseDirectory: coverage
+    configFilePath: '**/coverage-final.json'
     files:
       - '**/*.*'
