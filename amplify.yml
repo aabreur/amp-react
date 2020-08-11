@@ -3,9 +3,11 @@ frontend:
   phases:
     preBuild:
       commands:
+        - pwd
         - npm install
     build:
       commands:
+        - pwd
         - npm run build
   artifacts:
     baseDirectory: build
@@ -19,10 +21,12 @@ test:
     preTest:
       commands:
         - npm ci
+        - pwd
     test:
       commands:
         - npx prettier --check src
+        - pwd
   artifacts:
-    baseDirectory: /coverage
+    baseDirectory: coverage
     files:
       - '**/*.*'
