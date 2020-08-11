@@ -14,16 +14,3 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-test:
-  phases:
-    preTest:
-      commands:
-        - npm ci
-    test:
-      commands:
-        - npx prettier --check src
-        - CI=true npm run test -- --coverage --watchAll=false
-  artifacts:
-    baseDirectory: coverage
-    files:
-      - '**/*.*'
