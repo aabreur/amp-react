@@ -26,6 +26,8 @@ test:
       commands:
         - npx prettier --check src
         - CI=true npm run test -- --coverage --watchAll=false
+    postTest:
+      commands:
         - ls -lha
         - ls -lha coverage
   artifacts:
